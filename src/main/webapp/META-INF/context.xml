@@ -4,7 +4,10 @@
   <!-- warning: this example uses the connector/J version 8: the driver name is different from version 5 to avoid conflicts -->
   <!-- specificare la timezone del server, nella connection string o nella configurazione dello stesso, è essenziale col connector/J 8 -->
   <!-- specifying the server timezone, in the connection string o the server configuration is required with connector/J 8 -->
-  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxActive="10" maxIdle="5" maxWait="10000" name="jdbc/webmarket" password="admin" type="javax.sql.DataSource" url="jdbc:mysql://localhost/webmarket?connectionTimeZone=LOCAL&amp;forceConnectionTimeZoneToSession=false" username="admin"/>
+  <Resource auth="Container" driverClassName="com.mysql.cj.jdbc.Driver" maxActive="10" maxIdle="5" maxWait="10000" name="jdbc/webmarket" password="admin" type="javax.sql.DataSource" url="jdbc:mysql://db:3306/webmarket?connectionTimeZone=LOCAL&amp;forceConnectionTimeZoneToSession=false" username="admin"/>
   <Environment name="email" value="webmarket.we@outlook.com" type="java.lang.String" override="false"/>
   <Environment name="password" value="webmarket1234" type="java.lang.String" override="false"/>
+
+  <!-- For docker-compose: jdbc:mysql://db:3306/-->
+  <!-- For dlocalhost: jdbc:mysql://localhost/-->
 </Context>
