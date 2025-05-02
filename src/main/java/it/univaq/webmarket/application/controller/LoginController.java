@@ -20,6 +20,7 @@ import java.security.spec.InvalidKeySpecException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import java.util.logging.Logger;
 
 public class LoginController extends ApplicationBaseController {
 
@@ -72,6 +73,8 @@ public class LoginController extends ApplicationBaseController {
         if (email.isEmpty() || password.isEmpty()) {
             response.sendRedirect("login?error=3");
         }
+
+        Logger.getLogger(LoginController.class.getName()).info("Login: " + email + " " + password + " " + role);
 
         try {
             Utente u = null;
